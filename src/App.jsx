@@ -1,5 +1,9 @@
-import "./App.css";
+import Counter from "./Counter";
 
 export default function App() {
-  return "sales";
+  return (
+    <>
+      <Counter initialValue={42} step={2} />
+    </>
+  );
 }
