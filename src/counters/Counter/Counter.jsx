@@ -1,18 +1,25 @@
-import React from "react";
 import { number } from "prop-types";
+import { ButtonGroup, Card, Typography } from "@mui/material";
+import { Button } from "@mui/material";
+
+import { CardContent } from "./styles";
 import useCounter from "../../hooks/useCounter";
 
 export default function Counter({ initialValue = 0, step = 1 }) {
-  // TODO: begin with another
-  // TODO: inc/dec by another number
-
   const [counter, { increment, decrement }] = useCounter(initialValue, step);
+
   return (
-    <React.Fragment>
-      <p>{counter}</p>
-      <button onClick={decrement}>-{step}</button>
-      <button onClick={increment}>+{step}</button>
-    </React.Fragment>
+    <Card sx={{ maxWidth: 200, margin: "1rem" }} elevation={5}>
+      <CardContent>
+        <Typography variant="h2" component="p">
+          {counter}
+        </Typography>
+        <ButtonGroup variant="outlined">
+          <Button onClick={decrement}>-{step}</Button>
+          <Button onClick={increment}>+{step}</Button>
+        </ButtonGroup>
+      </CardContent>
+    </Card>
   );
 }
 
