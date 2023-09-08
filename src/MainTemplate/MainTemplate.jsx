@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom/dist";
 import "./styles.css";
 import { clsx } from "clsx";
+import { Typography } from "@mui/material";
 
 export default function MainTemplate() {
   const { pathname } = useLocation();
@@ -38,7 +39,9 @@ export default function MainTemplate() {
       <main>
         <Outlet />
       </main>
-      <footer> © 2023</footer>
+      <footer>
+        <Typography>© 2023</Typography>
+      </footer>
     </>
   );
 }
