@@ -1,8 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom/dist";
-import "./styles.css";
-import { clsx } from "clsx";
-import { Typography } from "@mui/material";
+import "./styles.js";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Container,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { Button, Footer } from "./styles.js";
 
 export default function MainTemplate() {
   const { pathname } = useLocation();
@@ -20,28 +28,51 @@ export default function MainTemplate() {
 
   return (
     <>
-      <header>
-        <nav>
-          <ol>
-            {menu.map(({ to, label }) => (
-              <li key={label}>
-                <Link
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h6"
+              noWrap
+              component={Link}
+              to="/"
+              sx={{
+                mr: 2,
+                display: "flex",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Sales
+            </Typography>
+
+            <Box sx={{ flexGrow: 1, display: "flex" }}>
+              {menu.map(({ to, label }) => (
+                <Button
+                  key={label}
+                  component={Link}
                   to={to}
-                  className={clsx("menu-item", { current: to === pathname })}
+                  current={to === pathname}
                 >
                   {label}
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      </header>
+                </Button>
+              ))}
+            </Box>
+
+            <Box sx={{ flexGrow: 0 }}>
+              <IconButton component={Link} sx={{ p: 0 }}>
+                <Avatar alt="Arnold"></Avatar>
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
       <main>
         <Outlet />
       </main>
-      <footer>
+      <Footer>
         <Typography>© 2023</Typography>
-      </footer>
+      </Footer>
     </>
   );
 }
