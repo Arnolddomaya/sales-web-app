@@ -7,6 +7,13 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 export const theme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "outlined",
+      },
+    },
+  },
   typography: {
     button: {
       textTransform: "none",
