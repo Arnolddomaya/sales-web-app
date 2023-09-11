@@ -6,4 +6,10 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-export const theme = createTheme({});
+export const theme = createTheme({
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+  },
+});

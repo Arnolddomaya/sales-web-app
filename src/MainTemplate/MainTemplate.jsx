@@ -61,7 +61,7 @@ export default function MainTemplate() {
 
             <Box sx={{ flexGrow: 0 }}>
               <IconButton component={Link} sx={{ p: 0 }}>
-                <Avatar alt="Arnold"></Avatar>
+                <Avatar alt="Arnold">AD</Avatar>
               </IconButton>
             </Box>
           </Toolbar>
