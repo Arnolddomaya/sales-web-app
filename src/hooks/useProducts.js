@@ -1,9 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 
-export default function useProducts() {
+export default function useProducts({ condition }) {
   const basURl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
 
-  return useQuery(["products"], () =>
-    fetch(`${basURl}/products`).then((response) => response.json()),
+  const searchParams = new URLSearchParams();
+
+  if (condition) searchParams.append("condition", condition);
+
+  return useQuery(["products", { condition }], () =>
+    fetch(`${basURl}/products?${searchParams}`).then((response) =>
+      response.json(),
+    ),
   );
 }
