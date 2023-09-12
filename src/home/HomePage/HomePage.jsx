@@ -8,7 +8,7 @@ import { useProducts } from "../../hooks";
 import { ProductDescription } from "../ProductDescription";
 
 export default function HomePage() {
-  const { products } = useProducts();
+  const { isLoading, error, data: products } = useProducts();
 
   const productColumns = [
     {
@@ -34,7 +34,8 @@ export default function HomePage() {
     },
     { field: "stock", headerName: "Stock" },
   ];
-
+  if (isLoading) return "loading ...";
+  if (error) return "Error!";
   return (
     <Box sx={{ height: 400, width: "100%" }}>
       <DataGrid
