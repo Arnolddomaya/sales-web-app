@@ -3,7 +3,7 @@ import { ButtonGroup, Card, Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
 import { CardContent } from "./styles";
-import useCounter from "../../hooks/useCounter";
+import useCounter from "../../../hooks/useCounter";
 
 export default function Counter({ initialValue = 0, step = 1 }) {
   const [counter, { increment, decrement }] = useCounter(initialValue, step);
