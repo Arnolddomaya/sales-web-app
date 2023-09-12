@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export default function useProducts() {
   const basURl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";

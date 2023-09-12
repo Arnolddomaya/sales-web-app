@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { router } from "./router";
 import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
-import { QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./queryClient";
 
 export default function App() {
