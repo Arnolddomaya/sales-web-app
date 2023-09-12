@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, LinearProgress } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { withRow } from "../../hoc";
 import { ProductCondition } from "../ProductCondition";
@@ -34,7 +34,7 @@ export default function HomePage() {
     },
     { field: "stock", headerName: "Stock" },
   ];
-  if (isLoading) return "loading ...";
+  if (isLoading) return <LinearProgress />;
   if (error) return "Error!";
   return (
     <Box sx={{ height: 400, width: "100%" }}>
