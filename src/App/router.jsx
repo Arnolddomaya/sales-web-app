@@ -4,6 +4,7 @@ import { MainTemplate } from "../ds/templates/MainTemplate";
 import { HomePage } from "../home/HomePage";
 import { CountersPage } from "../counters/CountersPage";
 import ProductPage from "../product/ProductPage/ProductPage";
+import { Project } from "../Project";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <ProductPage />,
+      },
+      {
+        path: "project",
+        element: <Project />,
       },
     ],
   },

@@ -24,6 +24,10 @@ export default function MainTemplate() {
       to: "/counters",
       label: "Counters",
     },
+    {
+      to: "/project",
+      label: "project",
+    },
   ];
 
   return (
