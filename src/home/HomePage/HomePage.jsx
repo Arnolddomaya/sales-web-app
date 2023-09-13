@@ -13,7 +13,7 @@ import { withRow } from "../../hoc";
 import { ProductCondition } from "../ProductCondition";
 import { ProductImage } from "../ProductImage";
 import { ProductPrice } from "../ProductPrice";
-import { useCondition, useProducts } from "../../hooks";
+import { useProductSearch, useProducts } from "../../hooks";
 import { ProductDescription } from "../ProductDescription";
 
 const conditionTypes = [
@@ -56,15 +56,24 @@ const productColumns = [
   { field: "stock", headerName: "Stock" },
 ];
 export default function HomePage() {
-  const [condition, setCondition] = useCondition();
-  const { isLoading, error, data: products } = useProducts({ condition });
+  const { condition, setCondition, search, setSearch } = useProductSearch();
+  const {
+    isLoading,
+    error,
+    data: products,
+  } = useProducts({ condition, search });
 
-  if (isLoading) return;
   if (error) return "Error!";
   return (
     <>
       <Stack direction="row" justifyContent="center" spacing={6} sx={{ my: 4 }}>
-        <TextField label="Recherche" sx={{ width: 400 }} />
+        <TextField
+          label="Recherche"
+          sx={{ width: 400 }}
+          value={search}
+          autoComplete="off"
+          onChange={setSearch}
+        />
         <FormControl>
           <FormLabel id="condition-label">Condition</FormLabel>
           <RadioGroup
