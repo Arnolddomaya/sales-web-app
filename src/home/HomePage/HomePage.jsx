@@ -10,11 +10,11 @@ import {
 } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { withRow } from "../../hoc";
-import { ProductCondition } from "../ProductCondition";
-import { ProductImage } from "../ProductImage";
-import { ProductPrice } from "../ProductPrice";
+import { ProductCondition } from "../../product/ProductCondition";
+import { ProductImage } from "../../product/ProductImage";
+import { ProductPrice } from "../../product/ProductPrice";
 import { useProductSearch, useProducts } from "../../hooks";
-import { ProductDescription } from "../ProductDescription";
+import { ProductDescription } from "../../product/ProductDescription";
 
 const conditionTypes = [
   {

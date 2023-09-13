@@ -10,7 +10,7 @@
 
 ## product
 
-![sales-product](./docs/sales-product.drawio.svg.drawio.svg)
+![sales-product](./docs/sales-product.drawio.svg)
 
 # React + Vite
 

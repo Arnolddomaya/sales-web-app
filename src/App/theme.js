@@ -18,5 +18,8 @@ export const theme = createTheme({
     button: {
       textTransform: "none",
     },
+    h1: {
+      fontSize: "2rem",
+    },
   },
 });
