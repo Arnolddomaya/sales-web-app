@@ -4,6 +4,7 @@ import "./styles.js";
 import {
   AppBar,
   Avatar,
+  Badge,
   Box,
   Container,
   IconButton,
@@ -11,9 +12,11 @@ import {
   Typography,
 } from "@mui/material";
 import { Button, Footer } from "./styles.js";
+import { FavoritesContext } from "../../../contexts/index.js";
 
 export default function MainTemplate() {
   const { pathname } = useLocation();
+  const { favorites } = FavoritesContext.useContext();
 
   const menu = [
     {
@@ -27,6 +30,10 @@ export default function MainTemplate() {
     {
       to: "/project",
       label: "project",
+    },
+    {
+      to: "/favorites",
+      label: "favorites",
     },
   ];
 
@@ -65,7 +72,9 @@ export default function MainTemplate() {
 
             <Box sx={{ flexGrow: 0 }}>
               <IconButton component={Link} sx={{ p: 0 }}>
-                <Avatar alt="Arnold">AD</Avatar>
+                <Badge badgeContent={favorites.length} color="error">
+                  <Avatar alt="Arnold">AD</Avatar>
+                </Badge>
               </IconButton>
             </Box>
           </Toolbar>

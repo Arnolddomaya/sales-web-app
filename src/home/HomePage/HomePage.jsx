@@ -9,12 +9,8 @@ import {
   TextField,
 } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { withRow } from "../../hoc";
-import { ProductCondition } from "../../product/ProductCondition";
-import { ProductImage } from "../../product/ProductImage";
-import { ProductPrice } from "../../product/ProductPrice";
 import { useProductSearch, useProducts } from "../../hooks";
-import { ProductDescription } from "../../product/ProductDescription";
+import { productColumns } from "../../product/productColums";
 
 const conditionTypes = [
   {
@@ -31,30 +27,6 @@ const conditionTypes = [
   },
 ];
 
-const productColumns = [
-  {
-    field: "imageUrl",
-    headerName: "Image produit",
-    renderCell: withRow(ProductImage),
-  },
-  {
-    field: "description",
-    headerName: "Description",
-    renderCell: withRow(ProductDescription),
-    flex: 1,
-  },
-  {
-    field: "price",
-    headerName: "Prix",
-    renderCell: withRow(ProductPrice),
-  },
-  {
-    field: "condition",
-    headerName: "Etat",
-    renderCell: withRow(ProductCondition),
-  },
-  { field: "stock", headerName: "Stock" },
-];
 export default function HomePage() {
   const { condition, setCondition, search, setSearch } = useProductSearch();
   const {

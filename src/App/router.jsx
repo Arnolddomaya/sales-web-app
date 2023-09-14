@@ -5,6 +5,7 @@ import { HomePage } from "../home/HomePage";
 import { CountersPage } from "../counters/CountersPage";
 import ProductPage from "../product/ProductPage/ProductPage";
 import { Project } from "../Project";
+import FavoritesPage from "../product/FavoritesPage/FavoritesPage";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ export const router = createBrowserRouter([
       {
         path: "project",
         element: <Project />,
+      },
+      {
+        path: "favorites",
+        element: <FavoritesPage />,
+      },
+      {
+        to: "/favorites",
+        label: "favorites",
       },
     ],
   },
