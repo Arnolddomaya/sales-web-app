@@ -18,7 +18,7 @@ const conditionTypes = [
     value: "",
   },
   {
-    label: "neuf",
+    label: "Neuf",
     value: "new",
   },
   {
