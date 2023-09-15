@@ -1,6 +1,5 @@
 import { number, oneOf } from "prop-types";
-
-const availableCurrencies = ["EUR", "USD"];
+import { availableCurrencies } from "./availableCurrencies";
 
 export default function Price({ value, currency = "EUR" }) {
   return new Intl.NumberFormat(window.navigator.language, {
