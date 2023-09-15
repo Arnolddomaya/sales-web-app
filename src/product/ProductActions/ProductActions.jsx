@@ -1,6 +1,6 @@
 import { IconButton } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { FavoritesContext } from "../../contexts";
+import { FavoritesContext } from "@/contexts";
 import { string } from "prop-types";
 
 export default function ProductActions({ id }) {

@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Button, Footer } from "./styles.js";
-import { FavoritesContext } from "../../../contexts/index.js";
+import { FavoritesContext } from "@/contexts/index.js";
 
 export default function MainTemplate() {
   const { pathname } = useLocation();

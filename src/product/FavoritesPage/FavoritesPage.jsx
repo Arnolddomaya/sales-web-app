@@ -1,6 +1,6 @@
 import { LinearProgress } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { FavoritesContext } from "../../contexts";
+import { FavoritesContext } from "@/contexts";
 import { useProductsByIds } from "../../hooks";
 import { productColumns } from "../productColums";
 
